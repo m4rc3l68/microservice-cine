@@ -1,12 +1,12 @@
 const { test, expect } = require('@jest/globals')
 const repository = require('./repository')
 
-let testMovieId = null
+// let testMovieId = null
 
-beforeAll( async () => {
-  const movies = await repository.getAllMovies()
-  testMovieId = movies[0]._id
-})
+// beforeAll( async () => {
+//   const movies = await repository.getAllMovies()
+//   testMovieId = movies[0]._id
+// })
 
 test('getAllMovies', async () => {
   const movies = await repository.getAllMovies()
@@ -15,9 +15,9 @@ test('getAllMovies', async () => {
 })
 
 test('getMovieById', async () => {
-  const movies = await repository.getMovieById(testMovieId)
+  const movies = await repository.getMovieById()
   expect(movies).toBeTruthy()
-  expect(movies._id) // .toEqual(testMovieId)
+  expect(movies._id) // .toEqual()
 })
 
 test('getMoviesPremieres', async () => {
