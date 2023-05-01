@@ -6,8 +6,8 @@ async function getAllMovies() {
   return db.collection('movies').find().toArray()
 }
 
-async function getMoviesById(id) {
-  const db = database.connect()
+async function getMovieById(id) {
+  const db = await database.connect()
   return db.collection('movies').find({ _id: new ObjectId(id) })
 }
 
@@ -16,11 +16,11 @@ async function getMoviesPremieres() {
   monthAgo.setMonth(-1)
 
   const db = await database.connect()
-  return db.collection('movies').find({ dataLacamento: { $gte: monthAgo } }).toArray()
+  return db.collection('movies').find({ dataLancamento: { $gte: monthAgo } }).toArray()
 }
 
 module.exports = {
   getAllMovies, 
-  getMoviesById,
+  getMovieById,
   getMoviesPremieres
 }

@@ -1,14 +1,31 @@
 const { test, expect } = require('@jest/globals')
-const repo = require('./repository')
+const repository = require('./repository')
 
-test('Obtain Movies', repo.getAllMovies, () => {
- expect(repo).toBeTruthy()
+let testMovieId = null
+
+beforeAll( async () => {
+  const movies = await repository.getAllMovies()
+  testMovieId = movies[0]._id
 })
 
-test('Obtain ID Movies', repo.getMoviesById, () => {
-  expect(repo).toBeTruthy()
+test('getAllMovies', async () => {
+  const movies = await repository.getAllMovies()
+ expect(Array.isArray(movies)).toBeTruthy()
+ expect(movies.length).toBeTruthy()
 })
 
-test('Obtain Premieres', repo.getMoviesPremieres, () => {
-  expect(repo).toBeTruthy()
+test('getMovieById', async () => {
+  const movies = await repository.getMovieById(testMovieId)
+  expect(movies).toBeTruthy()
+  // expect(movies._id).toEqual(testMovieId)
+})
+
+test('getMoviesPremieres', async () => {
+  const monthAgo = new Date()
+  monthAgo.setMonth(-1)
+
+  const movies = await repository.getMoviesPremieres()
+  expect(Array.isArray(movies)).toBeTruthy()
+  expect(movies.length).toBeTruthy()
+  expect(movies[0].dataLancamento.getTime()).toBeGreaterThanOrEqual(monthAgo.getTime())
 })
