@@ -14,8 +14,7 @@ test('Server Stop', async () => {
 
 test('Health Check', async () => {
   const app = await server.start()
-  const response = request(app).get('/health')
-  expect((await response).status).toEqual(200)
+  const response = await request(app).get('/health')
+  expect(response.status).toEqual(200)
 })
-
 

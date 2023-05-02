@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683035329857" clover="3.2.0">
-  <project timestamp="1683035329858" name="All files">
-    <metrics statements="34" coveredstatements="32" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2" elements="40" coveredelements="38" complexity="0" loc="34" ncloc="34" packages="1" files="1" classes="1"/>
+<coverage generated="1683038405154" clover="3.2.0">
+  <project timestamp="1683038405155" name="All files">
+    <metrics statements="35" coveredstatements="33" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2" elements="41" coveredelements="39" complexity="0" loc="35" ncloc="35" packages="1" files="1" classes="1"/>
     <file name="server.js" path="C:\Users\marce\microservice-cine\movies-service\src\server\server.js">
-      <metrics statements="34" coveredstatements="32" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <metrics statements="35" coveredstatements="33" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -38,6 +38,7 @@
       <line num="32" count="1" type="stmt"/>
       <line num="33" count="1" type="stmt"/>
       <line num="34" count="1" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

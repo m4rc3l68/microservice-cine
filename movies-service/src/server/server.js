@@ -20,15 +20,16 @@ async function start() {
   })
 
   server = app.listen(process.env.PORT, () => {
-    console.log(`The service ${process.env.MS_NAME} already started at ${process.env.PORT}`)
+    console.log(`The service ${process.env.MS_NAME} already started ${process.env.PORT}`)
   })
   return server
 }
 
 async function stop() {
   if(server) {
-   await server.close()
-   return true
+    await server.close()
+    return true
   }
 }
+
 module.exports = { start, stop }
