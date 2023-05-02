@@ -4,10 +4,10 @@ const repoTest = require('../config/database')
 
 let testMovieId = null
 
-// beforeAll( async () => {
-//   const movies = await repository.getAllMovies()
-//   testMovieId = movies[0]._id
-// })
+beforeAll( async () => {
+  const movies = await repository.getAllMovies()
+  testMovieId = movies[0]._id
+})
 
 test('getAllMovies', async () => {
   const movies = await repository.getAllMovies()
@@ -18,7 +18,7 @@ test('getAllMovies', async () => {
 test('getMovieById', async () => {
   const movies = await repository.getMovieById(testMovieId)
   expect(movies).toBeTruthy()
-  expect(movies._id) // .toEqual(testMovieId)
+  expect(movies._id) //.toEqual(testMovieId) 
 })
 
 test('getMoviesPremieres', async () => {
