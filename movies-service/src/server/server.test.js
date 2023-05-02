@@ -1,0 +1,21 @@
+const { test, expect } = require('@jest/globals')
+const server = require('./server')
+const request = require('supertest')
+
+test('Server Start', async () => {
+  const app = await server.start()
+ expect(app).toBeTruthy()
+})
+
+test('Server Stop', async () => {
+  const isStopped = await server.stop()
+  expect(isStopped).toBeTruthy()
+})
+
+test('Health Check', async () => {
+  const app = await server.start()
+  const response = request(app).get('/health')
+  expect((await response).status).toEqual(200)
+})
+
+

@@ -2,7 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
 
-let server = null
+let server = null 
 
 async function start() {
   const app = express()
@@ -22,13 +22,13 @@ async function start() {
   server = app.listen(process.env.PORT, () => {
     console.log(`The service ${process.env.MS_NAME} already started at ${process.env.PORT}`)
   })
-
-  async function stop() {
-    if(server) {
-     await server.close()
-     return true
-    }
-  }
+  return server
 }
 
+async function stop() {
+  if(server) {
+   await server.close()
+   return true
+  }
+}
 module.exports = { start, stop }
