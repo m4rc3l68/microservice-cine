@@ -23,11 +23,12 @@ async function start() {
     console.log(`The service ${process.env.MS_NAME} already started ${process.env.PORT}`)
   })
   return server
-}
 
-async function stop() {
-  if(server) {
-    await server.close()
+}
+  
+  async function stop() {
+    if(server) {
+      await server.close()
     return true
   }
 }
