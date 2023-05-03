@@ -6,7 +6,7 @@ module.exports = (app, repository) => {
     res.json(movies)
   })
 
-  app.get('/movies:id', async (req, res, next) => {
+  app.get('/movies/:id', async (req, res, next) => {
     const movie = await repository.getMovieById(req.params.id)
     if(!movie) return res.sendStatus(404)
 
