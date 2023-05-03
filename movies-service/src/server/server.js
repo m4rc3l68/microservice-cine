@@ -11,7 +11,7 @@ async function start() {
   app.use(morgan('dev'))
 
   app.get('/health', (req, res, next) => {
-    res.send(`The service ${process.env.MS_NAME} is running at ${process.env.PORT}`)
+    res.send(`The service ${ process.env.MS_NAME } is running at ${ process.env.PORT }` )
   })
 
   app.use((error, req, res, next) => {
@@ -20,17 +20,16 @@ async function start() {
   })
 
   server = app.listen(process.env.PORT, () => {
-    console.log(`The service ${process.env.MS_NAME} already started ${process.env.PORT}`)
+    console.log(`The service ${ process.env.MS_NAME } already started ${ process.env.PORT }` )
   })
+  
   return server
 
 }
   
   async function stop() {
-    if(server) {
-      await server.close()
+    if(server) await server.close()
     return true
-  }
 }
 
 module.exports = { start, stop }
