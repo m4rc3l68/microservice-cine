@@ -4,13 +4,13 @@ const movies = require('./movies')
 const request = require('supertest')
 const repositoryMock = require('../repository/__mocks__/repository')
 
-const express = require('express')
-const app = express()
+/* const express = require('express')
+const app = express() */
 
-// let app = null
+let app = null
 
 beforeAll(async () => {
-  app = server.start(movies, repositoryMock)
+  app = await server.start(movies, repositoryMock)
 })
 
 afterAll(async () => {
@@ -34,6 +34,6 @@ test('GET /movies/:id', async () => {
 test('GET /movies/premiers', async () => {
   const response = await request(app).get('/movies/premiers')
   expect(response.status).toEqual(200)
-  expect(Array.isArray(response.body)).toBeTruthy([0])
+  expect(Array.isArray(response.body)).toBeTruthy()
   expect(response.body.length).toBeTruthy()
 })
