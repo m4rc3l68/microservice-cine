@@ -4,6 +4,10 @@ const request = require('supertest')
 
 const apiMock = jest.fn((app, repository) => true)
 
+afterAll( async () => {
+  await server.stop()
+})
+
 test('Server Start', async () => {
   const app = await server.start(apiMock)
  expect(app).toBeTruthy()

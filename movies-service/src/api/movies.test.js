@@ -4,9 +4,6 @@ const movies = require('./movies')
 const request = require('supertest')
 const repositoryMock = require('../repository/__mocks__/repository')
 
-/* const express = require('express')
-const app = express() */
-
 let app = null
 
 beforeAll(async () => {
