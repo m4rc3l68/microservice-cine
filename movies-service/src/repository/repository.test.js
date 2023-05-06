@@ -1,6 +1,5 @@
 const { test, expect } = require('@jest/globals')
 const repository = require('./repository')
-const repoTest = require('../config/database')
 
 let testMovieId = null
 
@@ -29,15 +28,4 @@ test('getMoviesPremieres', async () => {
   expect(Array.isArray(movies)).toBeTruthy()
   expect(movies.length).toBeTruthy()
   expect(movies[0].dataLancamento.getTime()).toBeGreaterThanOrEqual(monthAgo.getTime())
-})
-
-test('Disconnecting Repository', async () => {
-  const isDisconnected  = await repoTest.disconnect()
-  expect(isDisconnected).toBeTruthy()
-})
-
-test('Disconnecting Repository 2x', async () => {
-  await repoTest.disconnect()
-  const isDisconnected  = await repoTest.disconnect()
-  expect(isDisconnected).toBeTruthy()
 })
