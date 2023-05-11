@@ -8,7 +8,7 @@ async function getAllMovies() {
 
 async function getMovieById(id) {
   const db = await database.connect()
-  return db.collection('movies').find({ _id: new ObjectId(id) }).toArray()
+  return db.collection('movies').findOne({ _id: new ObjectId(id) })
 }
 
 async function getMoviesPremieres() {
