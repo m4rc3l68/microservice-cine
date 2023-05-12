@@ -35,8 +35,8 @@ test('GET /movies/:id 404 NOT FOUND', async () => {
   expect(response.status).toEqual(404)
 })
 
-test('GET /movies/premiers 200 OK', async () => {
-  const response = await request(app).get('/movies/premiers')
+test('GET /movies/premieres 200 OK', async () => {
+  const response = await request(app).get('/movies/premieres')
   expect(response.status).toEqual(200)
   expect(Array.isArray(response.body)).toBeTruthy()
   expect(response.body.length).toBeTruthy()
