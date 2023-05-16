@@ -1,78 +1,181 @@
-const movies = [
-  {
-  "_id": "644ef9588d5ec8f47755d06d",
-  "titulo": "Os Vingadores: Ultimato",
-  "sinopse": "Os heróis mais poderosos da Terra enfrentando o Thanos. De novo.",
-  "duracao": 181,
-  "dataLancamento":  new Date("2021-04-25T00:00:00.000Z"),
-  "imagem": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-  "categorias": [
-    "Aventura",
-    "Ação"
-  ]
-},{
-  "_id": "644ef9c58d5ec8f47755d06e",
-  "titulo": "Os Vingadores: Guerra Infinita",
-  "sinopse": "Os heróis mais poderosos da Terra enfrentando o Thanos",
-  "duracao": 149,
-  "dataLancamento": new Date("2018-04-26T00:00:00.000Z"),
-  "imagem": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-  "categorias": [
-    "Aventura",
-    "Ação"
-  ]
-},{ 
-  "_id": "644ef9dd8d5ec8f47755d06f",
-  "titulo": "Os Vingadores: Era de Ultron",
-  "sinopse": "Os heróis mais poderosos da Terra enfrentando o Ultron",
-  "duracao": 141,
-  "dataLancamento": new Date("2015-04-23T00:00:00.000Z"),
-  "imagem": "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_UX182_CR0,0,182,268_AL_.jpg",
-  "categorias": [
-    "Aventura",
-    "Ação"
-  ]
-},{
-  "_id": "644ef9ed8d5ec8f47755d070",
-  "titulo": "Os Vingadores",
-  "sinopse": "Os heróis mais poderosos da Terra enfrentando o Loki",
-  "duracao": 143,
-  "dataLancamento": new Date("2012-04-27T00:00:00.000Z"),
-  "imagem": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg",
-  "categorias": [
-    "Aventura",
-    "Ação"
-  ]
-},{
-  "_id": "644efa048d5ec8f47755d071",
-  "titulo": "Um lugar chamado Notting-Hill",
-  "sinopse": "Conto da ciderela ao contrário",
-  "duracao": 120,
-  "dataLancamento": new Date("1999-03-20T00:00:00.000Z"),
-  "imagem": "http://www.holliwood.com.us/romance.png",
-  "categorias": [
-    "Comédia Romântica"
-  ]
+const { ObjectId } = require("mongodb");
+
+const cinemaCatalog = [{cidade: "Gravataí",
+	uf: "RS",
+	cinemas: []
+}, {
+	cidade: "Porto Alegre",
+	uf: "RS",
+	pais: "BR",
+	cinemas: [{
+		_id: ObjectId(),
+		nome: "Cinemark Bourbon Ipiranga",
+		salas: [{
+			nome: 1,
+			sessoes: [{
+				data: ISODate("2023-05-01T09:00:00Z"),
+				idFilme: ObjectId("644ef9c58d5ec8f47755d06e"),
+				filme: "Vingadores: Guerra Infinita",
+				valor: 25.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: false
+				}]
+			}, {
+				data: ISODate("2023-05-01T11:00:00Z"),
+				idFilme: ObjectId("644ef9c58d5ec8f47755d06e"),
+				filme: "Vingadores: Guerra Infinita",
+				valor: 25.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: true
+				}, ]
+			},{
+				data: ISODate("2022-06-01T13:00:00Z"),
+				idFilme: ObjectId("644ef9dd8d5ec8f47755d06f"),
+				filme: "Vingadores: Era de Ultron",
+				valor: 20.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: false
+				}, {
+					numero: 2,
+					disponivel: true
+				}, ]
+			}]
+		}, {
+			nome: 2,
+			sessoes: [{
+				data: ISODate("2023-05-01T09:00:00Z"),
+				idFilme: ObjectId("644ef9dd8d5ec8f47755d06f"),
+				filme: "Vingadores: Era de Ultron",
+				valor: 25.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: false
+				}, ]
+			}, {
+				data: ISODate("2023-05-01T11:00:00Z"),
+				idFilme: ObjectId("644ef9588d5ec8f47755d06d"),
+				filme: "Vingadores: Ultimato",
+				valor: 25.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: true
+				}, ]
+			}, {
+				data: ISODate("2023-05-01T13:00:00Z"),
+				idFilme: ObjectId("644ef9588d5ec8f47755d06d"),
+				filme: "Vingadores: Ultimato",
+				valor: 20.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: false
+				}, {
+					numero: 2,
+					disponivel: true
+				}, ]
+			}]
+		}]
+	}, {
+		_id: ObjectId(),
+		nome: "GNC Lindóia",
+		salas: [{
+			nome: 100,
+			sessoes: [{
+				data: ISODate("2023-04-30T19:00:00Z"),
+				idFilme: ObjectId("644ef9588d5ec8f47755d06d"),
+				filme: "Vingadores: Ultimato",
+				valor: 25.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: false
+				},]
+			}, {
+				data: ISODate("2023-04-30T11:00:00Z"),
+				idFilme: ObjectId("644ef9588d5ec8f47755d06d"),
+				filme: "Vingadores: Ultimato",
+				valor: 25.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: true
+				}, ]
+			}, {
+				data: ISODate("2023-04-30T13:00:00Z"),
+				idFilme: ObjectId("644ef9dd8d5ec8f47755d06f"),
+				filme: "Vingadores: Era de Ultron",
+				valor: 20.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: false
+				}, {
+					numero: 2,
+					disponivel: true
+				}]
+			},{
+				data: ISODate("2023-04-30T13:00:00Z"),
+				idFilme: ObjectId("644efa048d5ec8f47755d071"),
+				filme: "Um lugar chamado Notting Hill",
+				valor: 25.00,
+				assentos: [{
+					numero: 1,
+					disponivel: true
+				}, {
+					numero: 2,
+					disponivel: true
+				}]
+			},{
+				data: ISODate("2023-04-30T13:00:00Z"),
+				idFilme: ObjectId("644efa148d5ec8f47755d072"),
+				filme: "Velozes e Furiosos - Opreração Rio",
+				valor: 30.00,
+				assentos: [{
+					numero: 1,
+					disponivel: false
+				},{
+					numero: 2,
+					disponivel: true
+				}]
+			},{
+				data: ISODate("2023-04-30T13:00:00Z"),
+				idFilme: ObjectId("644efa2d8d5ec8f47755d073"),
+				filme: "Top Gun",
+				valor: 50.00,
+				assentos: [{
+					numero: 3,
+					disponivel: true
+				},{
+					numero: 2,
+					disponivel: true
+				}]
+			}]
+		}]
+	}]
 }]
-
-async function getAllMovies() {
-  return movies
-
-}
-async function getMovieById(id) {
-  if(id == -1) return null
-
-  movies[0]._id = id
- return movies[0]
-}
-
-async function getMoviesPremieres() {
-  movies[0].dataLancamento = new Date()
-  return [movies[0]]
-}
-
-module.exports = {
-  getAllMovies, 
-  getMovieById,
-  getMoviesPremieres
-}
