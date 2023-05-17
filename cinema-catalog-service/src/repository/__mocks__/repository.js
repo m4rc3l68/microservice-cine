@@ -172,7 +172,7 @@ const cinemaCatalog = [{cidade: "Gravataí",
 					numero: 3,
 					disponivel: true
 				},{
-					numero: 2,
+					numero: 1,
 					disponivel: true
 				}]
 			}]
