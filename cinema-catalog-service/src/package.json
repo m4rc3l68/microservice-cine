@@ -4,7 +4,7 @@
   "description": "Provide cinema catalog info.",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config index.js",
+    "start": "node -r dotenv-save/config index.js",
     "test": "jest"
   },
   "author": "\"Marcelino Costa\"",

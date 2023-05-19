@@ -9,6 +9,14 @@ async function getAllCities() {
     .toArray()
 }
 
+async function getCinemasCityById(cityId){
+  const db = await database.connect()
+  const objCityId = new ObjectId(cityId)
+  return db.collection('cinemaCatalog')
+    .findOne({ _id: objCityId}, {projection: {cinemas: 1}})
+}
+
 module.exports = {
-  getAllCities, 
+  getAllCities,
+  getCinemasCityById, 
 }
