@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686094328765" clover="3.2.0">
-  <project timestamp="1686094328766" name="All files">
-    <metrics statements="69" coveredstatements="63" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="4" elements="80" coveredelements="73" complexity="0" loc="69" ncloc="69" packages="2" files="2" classes="2"/>
+<coverage generated="1686348527826" clover="3.2.0">
+  <project timestamp="1686348527827" name="All files">
+    <metrics statements="108" coveredstatements="102" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="6" elements="125" coveredelements="118" complexity="0" loc="108" ncloc="108" packages="2" files="2" classes="2"/>
     <package name="config">
       <metrics statements="20" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
       <file name="database.js" path="C:\Users\marce\microservice-cine\cinema-catalog-service\src\config\database.js">
@@ -10,13 +10,13 @@
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
+        <line num="5" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
@@ -29,9 +29,9 @@
       </file>
     </package>
     <package name="repository">
-      <metrics statements="49" coveredstatements="49" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <metrics statements="88" coveredstatements="88" conditionals="8" coveredconditionals="8" methods="5" coveredmethods="5"/>
       <file name="repository.js" path="C:\Users\marce\microservice-cine\cinema-catalog-service\src\repository\repository.js">
-        <metrics statements="49" coveredstatements="49" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <metrics statements="88" coveredstatements="88" conditionals="8" coveredconditionals="8" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -51,18 +51,18 @@
         <line num="17" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
         <line num="19" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="21" count="2" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="29" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
@@ -70,7 +70,7 @@
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
+        <line num="39" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="40" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
         <line num="42" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -81,6 +81,45 @@
         <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="53" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
       </file>
     </package>
   </project>

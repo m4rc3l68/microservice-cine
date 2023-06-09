@@ -166,7 +166,7 @@ const cinemaCatalog = [{cidade: "Gravataí",
 			},{
 				data: ISODate("2023-04-30T13:00:00Z"),
 				idFilme: ObjectId("644efa2d8d5ec8f47755d073"),
-				filme: "Top Gun",
+				filme: "Top Gun - Uma Grande Aventura",
 				valor: 50.00,
 				assentos: [{
 					numero: 3,

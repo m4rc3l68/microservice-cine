@@ -3,6 +3,7 @@ const repository = require('./repository')
 //const disconnectRepo = require('../config/database')
 let cityId = null
 let cinemaId = null
+let movieId = null
 
 beforeAll( async () => {
   const cities = await repository.getAllCities()
@@ -10,6 +11,8 @@ beforeAll( async () => {
 
   const cinemas = await repository.getCinemasByCityId(cityId)
   cinemaId = cinemas[0]._id
+
+  movieId = cinemas[0].salas[0].sessoes[0].idFilme
 }) 
 
 test('getAllCities', async () => {
@@ -26,7 +29,19 @@ test('getCinemasByCityId', async () => {
 
 test('getMoviesByCinemaId', async () => {
   const movies = await repository.getMoviesByCinemaId(cinemaId)
-  console.log(movies)
   expect(Array.isArray(movies)).toBeTruthy()
   expect(movies.length).toBeTruthy()
 })
+
+test('getMoviesByCityId', async () => {
+  const movies = await repository.getMoviesByCityId(cityId)
+  expect(Array.isArray(movies)).toBeTruthy()
+  expect(movies.length).toBeTruthy()
+})
+
+test('getMoviesSessionsCityById', async () => {
+  const movieSessions = await repository.getMoviesSessionsCityById(movieId, cityId)
+  expect(Array.isArray(movieSessions)).toBeTruthy()
+  expect(movieSessions.length).toBeTruthy()
+})
+
