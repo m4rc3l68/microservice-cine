@@ -1,6 +1,6 @@
 const { test, expect } = require('@jest/globals')
 const repository = require('./repository')
-//const disconnectRepo = require('../config/database')
+// const disconnectRepo = require('../config/database')
 let cityId = null
 let cinemaId = null
 let movieId = null
@@ -50,3 +50,14 @@ test('getMovieSessionsByCinemaId', async () => {
   expect(Array.isArray(movieSessions)).toBeTruthy()
   expect(movieSessions.length).toBeTruthy()
 })
+
+/* test('Disconnecting Repoditory', async () => {
+  const isDisconnected  = await disconnectRepo.disconnect()
+  expect(isDisconnected).toBeTruthy()
+})
+
+test('Disconnecting Repository 2x', async () => {
+  await disconnectRepo.disconnect()
+  const isDisconnected  = await disconnectRepo.disconnect()
+  expect(isDisconnected).toBeTruthy()
+}) */
