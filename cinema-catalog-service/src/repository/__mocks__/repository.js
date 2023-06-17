@@ -1,6 +1,10 @@
 const { ObjectId } = require("mongodb");
 
-const cinemaCatalog = [{cidade: "Gravataí",
+// 6463e32bfd7997c3be421b3a
+// 6463e32bfd7997c3be421b3b
+
+const cinemaCatalog = [{
+	cidade: "Gravataí",
 	uf: "RS",
 	cinemas: []
 }, {
@@ -183,7 +187,7 @@ const cinemaCatalog = [{cidade: "Gravataí",
 function getAllCities() {
   return cinemaCatalog.map(catalog => {
 		return {
-			_id: ObjectId(),
+			_id: new ObjectId(),
 			pais: catalog.pais,
 			uf: catalog.uf,
 			cidade: catalog.cidade
@@ -192,10 +196,12 @@ function getAllCities() {
 }
 
 function getCinemasByCityId(cityId) {
+	if(cityId < 0) return null
 	return cinemaCatalog[cinemaCatalog.length -1].cinemas  
 }
 
 function getMoviesByCinemaId(cinemaId) {
+	if(cinemaId < 0) return null
 	return getCinemasByCityId().map(cinema => {
 		return {
 			titulo: cinema.salas[0].sessoes[0].filme,
@@ -205,10 +211,11 @@ function getMoviesByCinemaId(cinemaId) {
 }
 
 function getMoviesByCityId(cityId){
- return getMoviesByCinemaId()
+ return getMoviesByCinemaId(cityId)
 }
 
 function getMovieSessionsByCityId(movieId, cityId) {
+	if(movieId < 0 || cityId < 0) return null
 		return getCinemasByCityId().map(cinema => {
 			return {
 				titulo: cinema.salas[0].sessoes[0].filme,
@@ -222,7 +229,7 @@ function getMovieSessionsByCityId(movieId, cityId) {
 }
 
 function getMovieSessionsByCinemaId(movieId, cinemaId) {
-	return getMovieSessionsByCityId()
+	return getMovieSessionsByCityId(movieId, cinemaId)
 }
 
 module.exports = {
