@@ -19,8 +19,16 @@ async function getMoviesPremieres() {
   return db.collection('movies').find({ dataLancamento: { $gte: monthAgo } }).toArray()
 }
 
+async function addMovie(movie) {
+  const db = await database.connect()
+  const result = await db.collection('movies').insertOne(movie)
+  movie._id = result.insertedId
+  return movie
+}
+
 module.exports = {
   getAllMovies, 
   getMovieById,
-  getMoviesPremieres
+  getMoviesPremieres,
+  addMovie
 }

@@ -3,6 +3,7 @@ const server = require('../server/server')
 const movies = require('./movies')
 const request = require('supertest')
 const repositoryMock = require('../repository/__mocks__/repository')
+const { application, json } = require('express')
 
 let app = null
 
@@ -41,3 +42,23 @@ test('GET /movies/premieres 200 OK', async () => {
   expect(Array.isArray(response.body)).toBeTruthy()
   expect(response.body.length).toBeTruthy()
 })
+
+test('POST /movies/ 201 OK', async () => {
+  const movie = {
+    titule: 'Titulo Movie',
+    sumary: 'Movie Sumary',
+    duracao: 120,
+    dataLancamento: new Date(),
+    imagem: 'image.jpg',
+    categorias: ['Aventura']
+  }
+
+  const response = await request(app)
+  .post('/movies/')
+  .set('Content-Type', 'application/json')
+  .send(movie)
+  
+  expect(response.status).toEqual(201)
+  expect(response.body).toBeTruthy()
+})
+

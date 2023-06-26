@@ -1,8 +1,5 @@
 const { ObjectId } = require("mongodb");
 
-// 6463e32bfd7997c3be421b3a
-// 6463e32bfd7997c3be421b3b
-
 const cinemaCatalog = [{
 	cidade: "Gravataí",
 	uf: "RS",

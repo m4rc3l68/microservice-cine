@@ -31,6 +31,23 @@ test('getMoviesPremieres', async () => {
   expect(movies[0].dataLancamento.getTime()).toBeGreaterThanOrEqual(monthAgo.getTime())
 })
 
+test('addMovie', async () => {
+  const movie = {
+    titulo: 'Test Movie',
+    sinopse: 'Movie Sumary',
+    duracao: 120,
+    dataLancamento: new Date(),
+    imagem: 'image.jpg',
+    categorias: 'Aventura'
+  }
+
+  const result = await repository.addMovie(movie)
+  console.log(result)
+  expect(result).toBeTruthy()
+})
+
+
+
 test('Disconnecting Repoditory', async () => {
   const isDisconnected  = await disconnectRepo.disconnect()
   expect(isDisconnected).toBeTruthy()
