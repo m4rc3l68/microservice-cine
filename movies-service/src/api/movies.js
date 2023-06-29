@@ -15,7 +15,7 @@ module.exports = (app, repository) => {
     res.json(movies)
   })
 
-  app.post('movies', async (req, res, next) => {
+  app.post('/movies', async (req, res, next) => {
     const titulo = req.body.titulo
     const sinopse = req.body.sinopse
     const duracao = parseInt(req.body.duracao)
@@ -25,6 +25,12 @@ module.exports = (app, repository) => {
 
     const result = await repository.addMovie({titulo, sinopse, duracao, dataLancamento, imagem, categorias})
     res.status(201).json(result)
+  })
+
+  app.delete('/movies/:id', async (req, res, next) => {
+    const id = req.params.id
+    const result = await repository.deleteMovie(id)
+    res.sendStatus(204)
   })
 
 }

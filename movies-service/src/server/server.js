@@ -9,6 +9,7 @@ async function start(api, repository) {
 
   app.use(helmet())
   app.use(morgan('dev'))
+  app.use(express.json())
 
   app.get('/health', (req, res, next) => {
     res.send(`The service ${ process.env.MS_NAME } is running at ${ process.env.PORT }` )
@@ -17,7 +18,7 @@ async function start(api, repository) {
   api(app, repository)
 
   app.use((error, req, res, next) => {
-    console.error(error)
+    // console.error(error)
     res.sendStatus(500)
   })
 
